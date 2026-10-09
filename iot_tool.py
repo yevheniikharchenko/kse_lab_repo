@@ -57,7 +57,14 @@ def calculate_variant_6():
 def calculate_variant_7():
     print("\n[Variant 7: Robot Kinematics Drive Calculation]")
     # DEVELOPER 7: Read gear ratio i and motor RPM Nin.
+    i = float(input('Enter gear ratio:'))
+    N_in = float(input('Enter motor RPM:'))
     # Output shaft Nout = Nin / i. Apply bitwise left shift Nin << 3. Manipulator link string.
+    N_out = N_in / i
+    bit_shift = int(N_in) << 3 
+
+    print(f'Output shaft: {N_out}')
+    print(f'Bitwise left shift: {bit_shift}')
     pass
 
 

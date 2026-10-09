@@ -77,6 +77,7 @@ def calculate_variant_8():
         Y = int(P) | int(Q)
         print("Гідравлічна потужність:",W)
         print("Побітова операція OR:",Y)
+        print(bin(Y))
         #2
         a = input("Введіть код діагностики: ")
         i = "DTC" in a

@@ -48,10 +48,33 @@ def calculate_variant_5():
 
 
 def calculate_variant_6():
-    print("\n[Variant 6: Digital Communication Protocols]")
-    # DEVELOPER 6: Read I2C bus frequency in kHz (F). Period T = 1000000 / (F * 1000).
-    # Perform bitwise AND between frequency and 0x0F. USART_BAUDRATE string, rx buffer.
-    pass
+    #1
+    P, Q = map(float, input("Введіть тиск та витрату рідини: ").split())
+    W = (P * Q) / 600
+    Y = int(P) | int(Q)
+    print("Гідравлічна потужність:",W)
+    print("Побітова операція OR:",Y)
+    #2
+    a = input("Введіть код діагностики: ")
+    i = "DTC" in a
+    m = a.find("_")
+    print("Чи починається з DTC:",i)
+    print("Частина коду:",a[:m])
+    #3
+    s = list(map(float, input("Введіть список показань температури: ").split()))
+    s = s[1:]
+    s = s + [float(18)]
+    s_max = max(s)
+    s_min = min(s)
+    T = s_min, s_max
+    print("Список:",s)
+    print("Граничні значення:",T)
+    #4
+    c = {"cylinder_id":6767,"stroke_lenght":1809,"fluid_tags":["Wow","wow","woW","WoW","Wow"]}
+    f = set(c["fluid_tags"])
+    o = ("CONTAMINATED" not in f) and (c["stroke_lenght"]>=200)
+    print("Множина унікальних специфікацій:",f)
+    print("Перевірка логічної умови:",o)
 
 
 def calculate_variant_7():

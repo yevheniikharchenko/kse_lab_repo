@@ -91,9 +91,12 @@ def calculate_variant_11():
 
 def calculate_variant_12():
     print("\n[Variant 12: Optical Encoder Data Acquisition]")
-    # DEVELOPER 12: Read PPR and total pulses N. Revolutions (N // PPR), remainder (N % PPR).
-    # Apply bitwise left shift N << 1. ENC-OPT encoder serial number, measurement list.
-    pass
+    PPR, N = map(int, input('Введіть частоту та кількість сигналів: ').split(' '))
+
+    print(f'Кількість повних обертів: {N // PPR}')
+    print(f'Залишковий кут у імпульсах: {N % PPR}')
+
+    print(f'Зсунута кількість сигналів: {N << 1}')
 
 
 def calculate_variant_13():

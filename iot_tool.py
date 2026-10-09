@@ -97,9 +97,8 @@ def calculate_variant_12():
 
 
 def calculate_variant_13():
-    print("\n[Variant 13: Industrial Modbus RTU Network]")
     print("input 16-bit number")
-
+    
     modbus = input()
     high_byte = modbus[8:16]
     low_byte = modbus[0:8]
@@ -108,6 +107,15 @@ def calculate_variant_13():
     print(high_byte)
     print("low byte: ")
     print(low_byte)
+    print ("\n")
+
+    print("input register info")
+
+    inf = input()
+    inf = inf.replace("_", "")
+
+    print(inf)
+    print("Contains Temperature" if "Temperature" in inf else "Do not contain Temperature")
     print ("\n")
     pass
 

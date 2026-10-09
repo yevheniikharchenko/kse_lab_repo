@@ -14,8 +14,10 @@ def print_banner():
 
 def calculate_variant_1():
     print("\n[Variant 1: Servomotor Control Systems]")
-    # DEVELOPER 1: Read theta and omega. Calculate t = theta / omega.
-    # Perform bitwise AND between integer theta and 0xFF. Servomotor name, list of angles.
+    a = float(input("Введіть кут повороту ротора "))
+    b = float(input("Введіть кутову швидкість "))
+    t = a/b
+    print (t)
     pass
 
 

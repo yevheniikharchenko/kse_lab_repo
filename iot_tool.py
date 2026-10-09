@@ -48,33 +48,10 @@ def calculate_variant_5():
 
 
 def calculate_variant_6():
-    #1
-    P, Q = map(float, input("Введіть тиск та витрату рідини: ").split())
-    W = (P * Q) / 600
-    Y = int(P) | int(Q)
-    print("Гідравлічна потужність:",W)
-    print("Побітова операція OR:",Y)
-    #2
-    a = input("Введіть код діагностики: ")
-    i = "DTC" in a
-    m = a.find("_")
-    print("Чи починається з DTC:",i)
-    print("Частина коду:",a[:m])
-    #3
-    s = list(map(float, input("Введіть список показань температури: ").split()))
-    s = s[1:]
-    s = s + [float(18)]
-    s_max = max(s)
-    s_min = min(s)
-    T = s_min, s_max
-    print("Список:",s)
-    print("Граничні значення:",T)
-    #4
-    c = {"cylinder_id":6767,"stroke_lenght":1809,"fluid_tags":["Wow","wow","woW","WoW","Wow"]}
-    f = set(c["fluid_tags"])
-    o = ("CONTAMINATED" not in f) and (c["stroke_lenght"]>=200)
-    print("Множина унікальних специфікацій:",f)
-    print("Перевірка логічної умови:",o)
+    print("\n[Variant 7: Robot Kinematics Drive Calculation]")
+        # DEVELOPER 7: Read gear ratio i and motor RPM Nin.
+        # Output shaft Nout = Nin / i. Apply bitwise left shift Nin << 3. Manipulator link string.
+    pass
 
 
 def calculate_variant_7():
@@ -85,10 +62,33 @@ def calculate_variant_7():
 
 
 def calculate_variant_8():
-    print("\n[Variant 8: Hydraulics Parameter Control]")
-    # DEVELOPER 8: Read pressure P and flow rate Q. Hydraulic power W = (P * Q) / 600.
-    # Perform bitwise OR between integer P and Q. DTC diagnostic code, oil temperature list.
-    pass
+        #1
+        P, Q = map(float, input("Введіть тиск та витрату рідини: ").split())
+        W = (P * Q) / 600
+        Y = int(P) | int(Q)
+        print("Гідравлічна потужність:",W)
+        print("Побітова операція OR:",Y)
+        #2
+        a = input("Введіть код діагностики: ")
+        i = "DTC" in a
+        m = a.find("_")
+        print("Чи починається з DTC:",i)
+        print("Частина коду:",a[:m])
+        #3
+        s = list(map(float, input("Введіть список показань температури: ").split()))
+        s = s[1:]
+        s = s + [float(18)]
+        s_max = max(s)
+        s_min = min(s)
+        T = s_min, s_max
+        print("Список:",s)
+        print("Граничні значення:",T)
+        #4
+        c = {"cylinder_id":6767,"stroke_lenght":1809,"fluid_tags":["Wow","wow","woW","WoW","Wow"]}
+        f = set(c["fluid_tags"])
+        o = ("CONTAMINATED" not in f) and (c["stroke_lenght"]>=200)
+        print("Множина унікальних специфікацій:",f)
+        print("Перевірка логічної умови:",o)
 
 
 def calculate_variant_9():

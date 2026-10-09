@@ -98,7 +98,7 @@ def calculate_variant_12():
 
 def calculate_variant_13():
     print("input 16-bit number")
-    
+
     modbus = input()
     high_byte = modbus[8:16]
     low_byte = modbus[0:8]
@@ -116,8 +116,8 @@ def calculate_variant_13():
 
     print(inf)
     print("Contains Temperature" if "Temperature" in inf else "Do not contain Temperature")
-    print ("\n")
-    pass
+    print("\n")
+    print("\n")
 
 
 # ====================================================================

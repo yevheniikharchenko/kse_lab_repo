@@ -67,6 +67,8 @@ def calculate_variant_7():
 
     print(f'Output shaft: {N_out}')
     print(f'Bitwise left shift: {bit_shift}')
+    print(f'Binary output of output shaft: {bin(N_out)}')
+    print(f'Binary output of bitwise left shift: {bin(bit_shift)}')
     pass
 
 

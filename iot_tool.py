@@ -50,9 +50,9 @@ def calculate_variant_5():
 
 
 def calculate_variant_6():
-    print("\n[Variant 7: Robot Kinematics Drive Calculation]")
-        # DEVELOPER 7: Read gear ratio i and motor RPM Nin.
-        # Output shaft Nout = Nin / i. Apply bitwise left shift Nin << 3. Manipulator link string.
+    print("\n[Variant 6: Digital Communication Protocols]")
+    # DEVELOPER 6: Read I2C bus frequency in kHz (F). Period T = 1000000 / (F * 1000).
+    # Perform bitwise AND between frequency and 0x0F. USART_BAUDRATE string, rx buffer.
     pass
 
 
@@ -123,7 +123,6 @@ def calculate_variant_11():
 
 
 def calculate_variant_12():
-    print("\n[Variant 12: Optical Encoder Data Acquisition]")
     PPR, N = map(int, input('Введіть частоту та кількість сигналів: ').split(' '))
 
     print(f'Кількість повних обертів: {N // PPR}')
@@ -133,10 +132,27 @@ def calculate_variant_12():
 
 
 def calculate_variant_13():
-    print("\n[Variant 13: Industrial Modbus RTU Network]")
-    # DEVELOPER 13: Read 16-bit Modbus register value R.
-    # Split into High and Low bytes, print both in binary format.
-    pass
+    print("input 16-bit number")
+
+    modbus = input()
+    high_byte = modbus[8:16]
+    low_byte = modbus[0:8]
+
+    print("high byte: ")
+    print(high_byte)
+    print("low byte: ")
+    print(low_byte)
+    print ("\n")
+
+    print("input register info")
+
+    inf = input()
+    inf = inf.replace("_", "")
+
+    print(inf)
+    print("Contains Temperature" if "Temperature" in inf else "Do not contain Temperature")
+    print("\n")
+    print("\n")
 
 
 # ====================================================================

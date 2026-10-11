@@ -14,8 +14,10 @@ def print_banner():
 
 def calculate_variant_1():
     print("\n[Variant 1: Servomotor Control Systems]")
-    # DEVELOPER 1: Read theta and omega. Calculate t = theta / omega.
-    # Perform bitwise AND between integer theta and 0xFF. Servomotor name, list of angles.
+    a = float(input("Введіть кут повороту ротора "))
+    b = float(input("Введіть кутову швидкість "))
+    t = a/b
+    print (t)
     pass
 
 
@@ -57,15 +59,46 @@ def calculate_variant_6():
 def calculate_variant_7():
     print("\n[Variant 7: Robot Kinematics Drive Calculation]")
     # DEVELOPER 7: Read gear ratio i and motor RPM Nin.
+    i = float(input('Enter gear ratio:'))
+    N_in = float(input('Enter motor RPM:'))
     # Output shaft Nout = Nin / i. Apply bitwise left shift Nin << 3. Manipulator link string.
+    N_out = N_in / i
+    bit_shift = int(N_in) << 3 
+
+    print(f'Output shaft: {N_out}')
+    print(f'Bitwise left shift: {bit_shift}')
     pass
 
 
 def calculate_variant_8():
-    print("\n[Variant 8: Hydraulics Parameter Control]")
-    # DEVELOPER 8: Read pressure P and flow rate Q. Hydraulic power W = (P * Q) / 600.
-    # Perform bitwise OR between integer P and Q. DTC diagnostic code, oil temperature list.
-    pass
+        #1
+        P, Q = map(float, input("Введіть тиск та витрату рідини: ").split())
+        W = (P * Q) / 600
+        Y = int(P) | int(Q)
+        print("Гідравлічна потужність:",W)
+        print("Побітова операція OR:",Y)
+        print(bin(Y))
+        #2
+        a = input("Введіть код діагностики: ")
+        i = "DTC" in a
+        m = a.find("_")
+        print("Чи починається з DTC:",i)
+        print("Частина коду:",a[:m])
+        #3
+        s = list(map(float, input("Введіть список показань температури: ").split()))
+        s = s[1:]
+        s = s + [float(18)]
+        s_max = max(s)
+        s_min = min(s)
+        T = s_min, s_max
+        print("Список:",s)
+        print("Граничні значення:",T)
+        #4
+        c = {"cylinder_id":6767,"stroke_lenght":1809,"fluid_tags":["Wow","wow","woW","WoW","Wow"]}
+        f = set(c["fluid_tags"])
+        o = ("CONTAMINATED" not in f) and (c["stroke_lenght"]>=200)
+        print("Множина унікальних специфікацій:",f)
+        print("Перевірка логічної умови:",o)
 
 
 def calculate_variant_9():
@@ -90,10 +123,12 @@ def calculate_variant_11():
 
 
 def calculate_variant_12():
-    print("\n[Variant 12: Optical Encoder Data Acquisition]")
-    # DEVELOPER 12: Read PPR and total pulses N. Revolutions (N // PPR), remainder (N % PPR).
-    # Apply bitwise left shift N << 1. ENC-OPT encoder serial number, measurement list.
-    pass
+    PPR, N = map(int, input('Введіть частоту та кількість сигналів: ').split(' '))
+
+    print(f'Кількість повних обертів: {N // PPR}')
+    print(f'Залишковий кут у імпульсах: {N % PPR}')
+
+    print(f'Зсунута кількість сигналів: {N << 1}')
 
 
 def calculate_variant_13():
